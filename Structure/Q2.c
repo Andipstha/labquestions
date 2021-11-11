@@ -1,0 +1,1 @@
+// 2.	Writ a program, using structure to input records of 5 students. Members include name, roll number, and marks obtained in math, C programming and English. Display the records of students who have passed in C programming.
