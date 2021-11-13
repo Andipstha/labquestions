@@ -3,42 +3,42 @@
 */
 
 #include<stdio.h>
-struct emp
-{
-    char emp_name[20];
-    int emp_id;
-    int emp_salary;
-}e[5];
+#include<string.h>
+struct emp{
+	int emp_id;
+	char emp_name[25];
+	int emp_salary;
+}s[5];
 int main()
 {
-    int i=0,j=0,x=0;
-    for(i=0;i<5;i++){
-        printf("* Enter the details of the %dst employee:\n",i+1);
-        printf("# Enter the name of the employee:\n");
-        fgets(e[i].emp_name,20,stdin);
-        fflush(stdin);
-        printf("# Enter the id number of the employee:\n");
-        scanf("%d",&e[i].emp_id);
-        fflush(stdin);
-        printf("# Enter the salary of the employee:\n");
-        scanf("%d",&e[i].emp_salary);
-        fflush(stdin);
-    }
-    for(i=0;i<5;i++){
-        if(e[i].emp_name[0]== 'D'){
-            x=1;
-            printf("Name : %s\n",e[i].emp_name);
-            printf("Id : %d\n",e[i].emp_id);
-            printf("Salary : %d\n",e[i].emp_salary);
-        }
-     }
-  
-    if(x!=1){
-		        
-        printf("\n There are no details with the information you searched");
-	        
-    }
-    return 0;
-    
+	int i=0;
+	char name[25];
+	for(i=0;i<5;i++)
+	{
+		printf("\n Enter employee id:");
+		scanf("%d",&s[i].emp_id);
+		fflush(stdin);
+		printf("\n Enter employee name:");
+		gets(s[i].emp_name);
+		fflush(stdin);
+		printf("\n Enter salary:");
+		scanf("%d",&s[i].emp_salary);
+		fflush(stdin);
+	}
+	printf("\n the details of the employee whose name starts with d are:");
+	for(i=0;i<5;i++)
+	{
+		strcpy(name,s[i].emp_name);
+		if(name[0]=='D' || name[0]=='d')
+		{
+			printf("\n Employee Id= %d",s[i].emp_id);
+			fflush(stdin);
+			printf("\n Employee Name= %s",s[i].emp_name);
+			fflush(stdin);
+			printf("\n Employee Salary= %d",s[i].emp_salary);
+			fflush(stdin);
+		}
+	}
+	return 0;
 }
 

@@ -2,40 +2,46 @@
    Display 3 employee information who gets the highest salary.
 */
 #include<stdio.h>
-    struct emp{
-        int emp_id;
-        char emp_name[20];
-        int emp_salary;
-    }e[5];
-
+#include<conio.h>
+struct emp{
+	int emp_id;
+	char emp_name[20];
+	int emp_salary;
+}s[5];
 int main()
 {
-    int i=0,j=0,t=0,a=0;
-    for(i=0;i<5;i++){
-        printf("* Enter the details of the %dst employee:\n",i+1);
-        printf("# Enter the name of the employee:\n");
-        fgets(e[i].emp_name,20,stdin);
-        fflush(stdin);
-        printf("# Enter the id number of the employee:\n");
-        scanf("%d",&e[i].emp_id);
-        fflush(stdin);
-        printf("# Enter the salary of the employee:\n");
-        scanf("%d",&e[i].emp_salary);
-        fflush(stdin);
-    }
-    for(i=0;i<5;i++) 
+	
+	struct emp temp;
+	int i=0,j=0;
+	for(i=0;i<5;i++)
 	{
-		for(j=i+1;j<5;j++) 
+		printf("Enter id");
+		scanf("%d",&s[i].emp_id);
+		fflush(stdin);
+		printf("Enter name");
+		gets(s[i].emp_name);
+		fflush(stdin);
+		printf("Enter salary");
+		scanf("%d",&s[i].emp_salary);
+		fflush(stdin);
+	}
+	for(i=0;i<5;i++)
+	{
+		for(j=i+1;j<5;j++)
 		{
-			if(e[i].emp_salary<e[j].emp_salary)  
+			if(s[i].emp_salary<s[j].emp_salary);
 			{
-				t=e[i].emp_salary;
-				e[i].emp_salary=e[j].emp_salary;
-				e[j].emp_salary=t;	
+				temp=s[i];
+				s[i]=s[j];
+				s[j]=temp;
 			}
 		}
-    }
-    return 0;
-}
-   
-    
+	}
+	printf("The 3 employee who get the highest salary are:");
+	for(i=0;i<3;i++)
+	{
+		printf("Id:%d\n",s[i].emp_id);
+		printf("Name:%s\n",s[i].emp_name);
+		printf("Salary:%d\n",s[i].emp_salary);
+	}
+	return 0;

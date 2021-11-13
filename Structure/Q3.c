@@ -4,19 +4,35 @@
        display the time in the form 16:40:51.
 */
 #include<stdio.h>
-    struct time{
-        int hours;
-        int minute;
-        int second;
-    }s;
-    int main(){
-        printf("Enter the hour from 0 to 23.\n");
-        scanf("%d",&s.hours);
-        printf("Enter the minutes from 0 to 59.\n");
-        scanf("%d",&s.minute);
-        printf("Enter the seconds from 0 to 59.\n");
-        scanf("%d",&s.second);
-        printf("The time you enter is %d:%d:%d",s.hours,s.minute,s.second);
-    
+struct time_struct{
+int hour,minute,second;
+}time;
+int main()
+{
+int i;
+printf("\nEnter the time in hour, minute and second format");
+scanf("%d%d%d",&time.hour,&time.minute,&time.second);
+if(time.minute>60 || time.second>60)
+printf("\nPlease enter valid time format");
+else
+{
+printf("\nEntered Time is :");
+if(time.hour<=9 && time.minute<=9 && time.second<=9)
+printf("\n0%d:0%d:0%d",time.hour,time.minute,time.second);
+else if(time.hour<=9 && time.minute>9 && time.second>9)
+printf("\n0%d:%d:%d",time.hour,time.minute,time.second);
+else if(time.hour>9 && time.minute<=9 && time.second>9)
+printf("\n%d:0%d:%d",time.hour,time.minute,time.second);
+else if(time.hour>9 && time.minute>9 && time.second<=9)
+printf("\n%d:%d:0%d",time.hour,time.minute,time.second);
+else if(time.hour<=9 && time.minute<=9 && time.second>9)
+printf("\n0%d:0%d:%d",time.hour,time.minute,time.second);
+else if(time.hour<=9 && time.minute>9 && time.second<=9)
+printf("\n0%d:%d:0%d",time.hour,time.minute,time.second);
+else if(time.hour>9 && time.minute<=9 && time.second<=9)
+printf("\n%d:0%d:0%d",time.hour,time.minute,time.second);
+else
+printf("\n%d:%d:%d",time.hour,time.minute,time.second);
+}
 return 0;
 }
