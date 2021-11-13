@@ -1,24 +1,18 @@
-/* WAP to convert a lower case string to upper case string without using string
-   handelling function.
-*/
+//5.	Write a program to convert a lower case string to upper case string without using string handling function.
 #include<stdio.h>
-int main(){
-    char a[6],b;
-    int i,j,sum;
-    printf("Enter the string.\n");
-    gets(a);
-    for(i=0;i<=5;i++){
-        b=a[i];
-        printf("%c",b);
-
-    }
-    printf("The string of the lower case is:\n");
-    for(i=0;i<=5;i++){
-         a[i]=a[j];
-         
-            
-    }
+int main()
+{
+	char a[20];
+	int i=0;
+	printf("\n enter your string in lowercase:");
+	gets(a);
+	while(a[i]!='\0')
+	{
+		if(a[i]>='a'&&a[i]<='z')
+		a[i]=a[i]-32;
+		i++;
+	}
+	printf("\n the uppercase string is:");
+	puts(a);
+	getch();
 }
-
-
- 
