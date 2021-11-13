@@ -2,7 +2,6 @@
    Display 3 employee information who gets the highest salary.
 */
 #include<stdio.h>
-#include<conio.h>
 struct emp{
 	int emp_id;
 	char emp_name[20];
@@ -29,7 +28,7 @@ int main()
 	{
 		for(j=i+1;j<5;j++)
 		{
-			if(s[i].emp_salary<s[j].emp_salary);
+			if(s[i].emp_salary<s[j].emp_salary)
 			{
 				temp=s[i];
 				s[i]=s[j];
@@ -45,3 +44,4 @@ int main()
 		printf("Salary:%d\n",s[i].emp_salary);
 	}
 	return 0;
+}
