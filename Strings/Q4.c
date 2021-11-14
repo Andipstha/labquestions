@@ -1,4 +1,4 @@
-//4.	Write a program to count no of spaces, vowels in a sentence input by the user.#include<stdio.h>
+//4.	Write a program to count no of spaces, vowels in a sentence input by the user.
 #include<stdio.h>
 int main()
 {

@@ -1,20 +1,18 @@
-/* WAP to find sum of Natural Numbers Using Recursion.*/
+//1.	Write a program to find sum of Natural Numbers Using Recursion
 #include<stdio.h>
-int sum(int);
-int main()
+int addNumbers(int n);
+int main() 
 {
-    int a,result;
-    printf("Enter the natural number up to which sum has to calculate.\n");
-    scanf("%d",&a);
-    result=sum(a);
-    printf("The sum of the natural number up to %d is %d",a,result);
-    return 0;
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+    printf("Sum = %d", addNumbers(num));
+ getch();
 }
-int sum(n){
-    if(n>0){
-        return n+sum(n-1);
-    }
-    else{
-        return 0;
-    }
+
+int addNumbers(int n) {
+    if (n != 0)
+        return n + addNumbers(n - 1);
+    else
+        return n;
 }

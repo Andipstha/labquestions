@@ -1,20 +1,24 @@
-/* WAP to find factorial of a given number using recursion. */
+//4.	Write a program to find factorial of a given number using recursion.
 #include<stdio.h>
 int fact(int);
-int main(){
-    int a,result;
-    printf("Enter the number you want to find the factorial.\n");
-    scanf("%d",&a);
-    result=fact(a);
-    printf("The factorial of %d is %d",a,result);
-    return 0;
+int main()
+{
+	int result=0;
+	int num;
+	printf("\n enter the number you want to know the factorial");
+	scanf("%d",&num);
+	result=fact(num);
+	printf("\n result=%d",result);
+	getch();
 }
-int fact(x){
-    if(x==1){
-        return 1;
-    }
-    else{
-        return x * fact(x-1);
-    }
-
+int fact(int x)
+{
+	if(x!=0)
+	{
+		return(x*fact(x-1));
+	}
+	else
+	{
+		return 1;
+	}
 }
